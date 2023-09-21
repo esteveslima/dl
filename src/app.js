@@ -10,7 +10,6 @@ app.set('sequelize', sequelize);
 app.set('models', sequelize.models);
 
 /**
- * FIX ME!
  * @returns contract by id
  */
 app.get('/contracts/:id', getProfile, async (req, res) => {
@@ -31,4 +30,26 @@ app.get('/contracts/:id', getProfile, async (req, res) => {
 
   return res.json(contract);
 });
+
+/**
+ * @returns list of non terminated contracts
+ */
+app.get('/contracts', getProfile, async (req, res) => {
+  const profileId = req.profile.id;
+
+  const { Contract } = req.app.get('models');
+  const contracts = await Contract.findAll({
+    where: {
+      status: { [Op.ne]: 'terminated' },
+      [Op.or]: [
+        { ContractorId: profileId },
+        { ClientId: profileId },
+      ],
+    },
+  });
+  if (contracts.length === 0) return res.status(404).end();
+
+  return res.json(contracts);
+});
+
 module.exports = app;
