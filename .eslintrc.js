@@ -22,5 +22,6 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
+    'max-classes-per-file': 'off',
   },
 };

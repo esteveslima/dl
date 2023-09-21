@@ -1,7 +1,5 @@
 const app = require('./app');
 
-init();
-
 async function init() {
   try {
     app.listen(3001, () => {
@@ -12,3 +10,5 @@ async function init() {
     process.exit(1);
   }
 }
+
+init();
