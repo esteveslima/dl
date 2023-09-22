@@ -82,4 +82,79 @@ app.get('/jobs/unpaid', getProfile, async (req, res) => {
   return res.json(jobs);
 });
 
+/**
+ * Makes the contract payment from the client to the contractor
+ * @returns status code reflecting the operation result
+ */
+app.post('/jobs/:job_id/pay', getProfile, async (req, res) => {
+  const { job_id } = req.params;
+  const clientProfileId = req.profile.id;
+
+  const { Job } = req.app.get('models');
+  const { Contract } = req.app.get('models');
+  const { Profile } = req.app.get('models');
+
+  const job = await Job.findOne({
+    where: {
+      id: job_id,
+    },
+    include: {
+      model: Contract,
+      include: [
+        {
+          model: Profile,
+          as: 'Client',
+        },
+      ],
+    },
+  });
+  if (!job) return res.status(404).end();
+  if (job.Contract.ClientId !== clientProfileId) return res.status(404).end();
+
+  if (job.Contract.status !== 'in_progress') return res.status(400).json({ message: 'Contract not active!' }).end();
+  // if (job.Contract.Client.balance < job.price) return res.status(400).json({ message: 'Insufficient balance!' }).end();
+
+  const transaction = await sequelize.transaction();
+  try {
+    const [decrementResult, incrementResult] = await Promise.all([
+      Profile.decrement(
+        {
+          balance: job.price,
+        },
+        {
+          where: {
+            id: job.Contract.ClientId,
+            balance: {
+              [Op.gte]: job.price,
+            },
+          },
+        },
+      ),
+      Profile.increment(
+        {
+          balance: job.price,
+        },
+        {
+          where: {
+            id: job.Contract.ContractorId,
+          },
+        },
+      ),
+    ]);
+
+    const [[_, rowsAffected]] = decrementResult;
+    if (rowsAffected === 0) {
+      await transaction.rollback();
+      return res.status(500).json({ message: 'Insufficient balance!' }).end();
+    }
+
+    await transaction.commit();
+  } catch (exception) {
+    console.log(exception);
+    return res.status(500).json({ message: 'Failed to make payment!' }).end();
+  }
+
+  return res.status(200).end();
+});
+
 module.exports = app;
