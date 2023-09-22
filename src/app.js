@@ -254,4 +254,48 @@ app.get('/admin/best-profession', getProfile, async (req, res) => {
   return res.status(200).json({ profession }).end();
 });
 
+/**
+ * @returns the clients that payed the most for jobs within a time range
+ */
+// P.S.: Assuming it should follow the example in the README.md and return the paird jobs individually and not the aggregated sum per client
+app.get('/admin/best-clients', getProfile, async (req, res) => {
+  const { start, end, limit } = req.query;
+
+  const { Profile } = req.app.get('models');
+  const { Job } = req.app.get('models');
+  const { Contract } = req.app.get('models');
+
+  const jobQueryResult = await Job.findAll({
+    where: {
+      paid: true,
+      paymentDate: {
+        [Op.gt]: new Date(`${start}`),
+        [Op.lt]: new Date(`${end}`),
+      },
+    },
+    include: {
+      model: Contract,
+      include: [
+        {
+          model: Profile,
+          as: 'Client',
+        },
+      ],
+    },
+    order: [
+      ['price', 'DESC'],
+    ],
+    limit: limit ?? 2,
+  });
+  if (jobQueryResult.length === 0) return res.status(404).end();
+
+  const result = jobQueryResult.map((record) => ({
+    id: record.dataValues.Contract.Client.id,
+    fullName: `${record.dataValues.Contract.Client.firstName} ${record.dataValues.Contract.Client.lastName}`,
+    paid: record.dataValues.price,
+  }));
+
+  return res.status(200).json({ result }).end();
+});
+
 module.exports = app;

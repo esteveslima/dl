@@ -24,5 +24,7 @@ module.exports = {
   rules: {
     'max-classes-per-file': 'off',
     camelcase: 'off',
+    'max-len': 'warn',
+    'no-unused-vars': 'warn',
   },
 };
