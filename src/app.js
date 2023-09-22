@@ -157,4 +157,56 @@ app.post('/jobs/:job_id/pay', getProfile, async (req, res) => {
   return res.status(200).end();
 });
 
+/**
+ * Adds balance to a client
+ * @returns status code reflecting the operation result
+ */
+// P.S.: assuming it is an API open for any profile ID given there's a path parameter, otherwise it would be better to use the id from the header
+app.post('/balances/deposit/:userId', getProfile, async (req, res) => {
+  const { userId } = req.params;
+  const { amount } = req.body;
+
+  const { Profile } = req.app.get('models');
+  const { Job } = req.app.get('models');
+  const { Contract } = req.app.get('models');
+
+  const profileQueryResult = await Profile.findOne({
+    where: {
+      id: userId,
+    },
+    include: {
+      model: Contract,
+      as: 'Client',
+      where: {
+        status: 'in_progress',
+      },
+      include: [
+        {
+          model: Job,
+        },
+      ],
+    },
+    attributes: [
+      [sequelize.fn('SUM', sequelize.col('Client->Jobs.price')), 'jobsPricesTotalAmount'],
+    ],
+    includeIgnoreAttributes: false,
+  });
+  if (!profileQueryResult.dataValues.jobsPricesTotalAmount) return res.status(404).end();
+
+  if (amount > 0.25 * profileQueryResult.dataValues.jobsPricesTotalAmount) return res.status(400).json({ message: 'Amount exceding 25% of the total price of jobs to pay' }).end();
+
+  await Profile.increment(
+    {
+      balance: amount,
+    },
+    {
+      where: {
+        id: userId,
+      },
+    },
+  );
+
+  return res.status(200).end();
+});
+
 module.exports = app;
