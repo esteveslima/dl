@@ -209,4 +209,49 @@ app.post('/balances/deposit/:userId', getProfile, async (req, res) => {
   return res.status(200).end();
 });
 
+/**
+ * @returns the profession that earned the most money within a time range
+ */
+app.get('/admin/best-profession', getProfile, async (req, res) => {
+  const { start, end } = req.query;
+
+  const { Profile } = req.app.get('models');
+  const { Job } = req.app.get('models');
+  const { Contract } = req.app.get('models');
+
+  const profileQueryResult = await Profile.findAll({
+    include: {
+      model: Contract,
+      as: 'Contractor',
+      where: {
+        createdAt: {
+          [Op.gt]: new Date(`${start}`),
+          [Op.lt]: new Date(`${end}`),
+        },
+      },
+      include: [
+        {
+          model: Job,
+          where: {
+            paid: true,
+          },
+        },
+      ],
+    },
+    group: 'profession',
+    attributes: [
+      'profession',
+      [sequelize.fn('SUM', sequelize.col('Contractor->Jobs.price')), 'jobsPricesTotalAmount'],
+    ],
+    includeIgnoreAttributes: false,
+  });
+  if (profileQueryResult.length === 0) return res.status(404).end();
+
+  const professionWithTheMostMoneyWithinRange = profileQueryResult.sort((a, b) => b.dataValues.jobsPricesTotalAmount - a.dataValues.jobsPricesTotalAmount);
+
+  const { profession } = professionWithTheMostMoneyWithinRange[0];
+
+  return res.status(200).json({ profession }).end();
+});
+
 module.exports = app;
