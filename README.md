@@ -102,4 +102,6 @@ Thank you and good luck! 🙏
 
 ## Potential improvements:
 - configure typescript
+- setup clear interfaces
 - fine tune database queries to not return unnecessary data
+- introduce request input validation

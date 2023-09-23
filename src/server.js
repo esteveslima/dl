@@ -1,4 +1,4 @@
-const app = require('./app');
+const app = require('./config/app');
 
 async function init() {
   try {
