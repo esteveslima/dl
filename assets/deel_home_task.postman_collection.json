@@ -1,0 +1,1509 @@
+{
+	"info": {
+		"_postman_id": "38aff201-61ed-42ab-a0f4-f80e5f50ac92",
+		"name": "dl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10814302"
+	},
+	"item": [
+		{
+			"name": "/contracts/:id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{PROFILE_ID_HEADER_KEY}}",
+						"value": "{{PROFILE_ID_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/contracts/:id",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"contracts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/contracts/:id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/contracts/:id",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"contracts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "160"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a0-LVaLQ6xRYX54A07tLLICN9WyDdU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:39:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"terms\": \"bla bla bla\",\n    \"status\": \"terminated\",\n    \"createdAt\": \"2023-09-23T00:36:13.334Z\",\n    \"updatedAt\": \"2023-09-23T00:36:13.334Z\",\n    \"ContractorId\": 5,\n    \"ClientId\": 1\n}"
+				},
+				{
+					"name": "/contracts/:id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/contracts/:id",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"contracts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-zrpPZyFWOHZ26w2qxFiPHUcPqN0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:40:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"contract not found!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/contracts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{PROFILE_ID_HEADER_KEY}}",
+						"value": "{{PROFILE_ID_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/contracts",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"contracts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/contracts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/contracts",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"contracts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-6ej5Zm/ccCWy1owSfmLwZa/yDPk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:40:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"terms\": \"bla bla bla\",\n        \"status\": \"in_progress\",\n        \"createdAt\": \"2023-09-23T00:36:13.335Z\",\n        \"updatedAt\": \"2023-09-23T00:36:13.335Z\",\n        \"ContractorId\": 6,\n        \"ClientId\": 1\n    }\n]"
+				},
+				{
+					"name": "/contracts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/contracts",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"contracts"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:41:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "/jobs/unpaid",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{PROFILE_ID_HEADER_KEY}}",
+						"value": "{{PROFILE_ID_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/jobs/unpaid",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"jobs",
+						"unpaid"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/jobs/unpaid",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/jobs/unpaid",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"jobs",
+								"unpaid"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "167"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a7-bu4Zr2hjQUrw0Xvqfpc8ErF1110\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:41:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"description\": \"work\",\n        \"price\": 201,\n        \"paid\": null,\n        \"paymentDate\": null,\n        \"createdAt\": \"2023-09-23T00:41:54.918Z\",\n        \"updatedAt\": \"2023-09-23T00:41:54.918Z\",\n        \"ContractId\": 2\n    }\n]"
+				},
+				{
+					"name": "/jobs/unpaid",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/jobs/unpaid",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"jobs",
+								"unpaid"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-FMdJj9274ywxciwbABVx/2b5dbA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:42:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Jobs not found!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/jobs/:job_id/pay",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "{{PROFILE_ID_HEADER_KEY}}",
+						"value": "{{PROFILE_ID_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/jobs/:job_id/pay",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"jobs",
+						":job_id",
+						"pay"
+					],
+					"variable": [
+						{
+							"key": "job_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/jobs/:job_id/pay",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/jobs/:job_id/pay",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"jobs",
+								":job_id",
+								"pay"
+							],
+							"variable": [
+								{
+									"key": "job_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:42:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "/jobs/:job_id/pay",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/jobs/:job_id/pay",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"jobs",
+								":job_id",
+								"pay"
+							],
+							"variable": [
+								{
+									"key": "job_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-PF5gSAKNcN9z0t/UHB8H+ImVvtw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:42:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid request, job already paid!\"\n}"
+				},
+				{
+					"name": "/jobs/:job_id/pay",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/jobs/:job_id/pay",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"jobs",
+								":job_id",
+								"pay"
+							],
+							"variable": [
+								{
+									"key": "job_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-D6bjxK1WJ2yjXMNzRCqGLzju1ac\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:43:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Job not found!\"\n}"
+				},
+				{
+					"name": "/jobs/:job_id/pay",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/jobs/:job_id/pay",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"jobs",
+								":job_id",
+								"pay"
+							],
+							"variable": [
+								{
+									"key": "job_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-29/dVldz8/KZxtvAJzy7l+oZQAA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:42:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid request, contract not active!\"\n}"
+				},
+				{
+					"name": "/jobs/:job_id/pay",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/jobs/:job_id/pay",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"jobs",
+								":job_id",
+								"pay"
+							],
+							"variable": [
+								{
+									"key": "job_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32-JAWBNp3w9hEh/6cSbFTK9yHbbJE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:44:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid request, not enough balance!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/balances/deposit/:userId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "{{PROFILE_ID_HEADER_KEY}}",
+						"value": "{{PROFILE_ID_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 106\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/balances/deposit/:userId",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"balances",
+						"deposit",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/balances/deposit/:userId",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/balances/deposit/:userId",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"balances",
+								"deposit",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:45:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "/balances/deposit/:userId",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/balances/deposit/:userId",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"balances",
+								"deposit",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"55-n4UV+dh7+W886dzY7sQIxHrje70\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:45:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid request, amount exceding the deposit limit (50.25: 25% of 201)!\"\n}"
+				},
+				{
+					"name": "/balances/deposit/:userId",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 106\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/balances/deposit/:userId",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"balances",
+								"deposit",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-fO3YyBUiIhdKiCQjgLR8kLSEEeQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:44:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid request, no reference of jobs to pay found!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/admin/best-profession",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{PROFILE_ID_HEADER_KEY}}",
+						"value": "{{PROFILE_ID_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/admin/best-profession?start=2023-09-20T05:12:53&end=2023-09-21T05:12:53",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"admin",
+						"best-profession"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2023-09-20T05:12:53"
+						},
+						{
+							"key": "end",
+							"value": "2023-09-21T05:12:53"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/admin/best-profession",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/admin/best-profession?start=2023-09-20T05:12:53&end=2023-09-23T05:12:53",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"best-profession"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-09-20T05:12:53"
+								},
+								{
+									"key": "end",
+									"value": "2023-09-23T05:12:53"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-lddxt6JZfPR6xdYGe0iS5fW2HnI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:46:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"bestProfession\": \"Programmer\"\n}"
+				},
+				{
+					"name": "/admin/best-profession",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/admin/best-profession?start=2023-09-20T05:12:53&end=2023-09-21T05:12:53",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"best-profession"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-09-20T05:12:53"
+								},
+								{
+									"key": "end",
+									"value": "2023-09-21T05:12:53"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20-VsvaM6z9QFiV5yNyDOnJgsdDeFw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:46:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Profile not found!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/admin/best-clients",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{PROFILE_ID_HEADER_KEY}}",
+						"value": "{{PROFILE_ID_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/admin/best-clients?start=2019-09-20T05:12:53&end=2023-09-21T05:12:53&limit=6",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"admin",
+						"best-clients"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2019-09-20T05:12:53"
+						},
+						{
+							"key": "end",
+							"value": "2023-09-21T05:12:53"
+						},
+						{
+							"key": "limit",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/admin/best-clients",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/admin/best-clients?start=2019-09-20T05:12:53&end=2023-09-21T05:12:53&limit=6",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"best-clients"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2019-09-20T05:12:53"
+								},
+								{
+									"key": "end",
+									"value": "2023-09-21T05:12:53"
+								},
+								{
+									"key": "limit",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "266"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10a-Yv7s3qkZXtyDnXVna4PwQxvSwVw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:46:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"fullName\": \"Ash Kethcum\",\n        \"paid\": 2020\n    },\n    {\n        \"id\": 1,\n        \"fullName\": \"Harry Potter\",\n        \"paid\": 200\n    },\n    {\n        \"id\": 2,\n        \"fullName\": \"Mr Robot\",\n        \"paid\": 200\n    },\n    {\n        \"id\": 1,\n        \"fullName\": \"Harry Potter\",\n        \"paid\": 200\n    },\n    {\n        \"id\": 3,\n        \"fullName\": \"John Snow\",\n        \"paid\": 200\n    },\n    {\n        \"id\": 2,\n        \"fullName\": \"Mr Robot\",\n        \"paid\": 121\n    }\n]"
+				},
+				{
+					"name": "/admin/best-clients",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/admin/best-clients?start=2019-09-20T05:12:53&end=2023-09-21T05:12:53",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"best-clients"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2019-09-20T05:12:53"
+								},
+								{
+									"key": "end",
+									"value": "2023-09-21T05:12:53"
+								},
+								{
+									"key": "limit",
+									"value": "6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5d-dOQ2IXiPgn/XwF3XYo41Z2ez5lg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:46:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"fullName\": \"Ash Kethcum\",\n        \"paid\": 2020\n    },\n    {\n        \"id\": 1,\n        \"fullName\": \"Harry Potter\",\n        \"paid\": 200\n    }\n]"
+				},
+				{
+					"name": "/admin/best-clients",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{PROFILE_ID_HEADER_KEY}}",
+								"value": "{{PROFILE_ID_HEADER_VALUE}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/admin/best-clients?start=2023-09-20T05:12:53&end=2023-09-21T05:12:53",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"best-clients"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-09-20T05:12:53"
+								},
+								{
+									"key": "end",
+									"value": "2023-09-21T05:12:53"
+								},
+								{
+									"key": "limit",
+									"value": "6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-COgyiVKi/ATYYpB67JARfxuzpRg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Sep 2023 00:48:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Profiles not found!\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://localhost:3001",
+			"type": "string"
+		},
+		{
+			"key": "PROFILE_ID_HEADER_KEY",
+			"value": "profile_id",
+			"type": "string"
+		},
+		{
+			"key": "PROFILE_ID_HEADER_VALUE",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
